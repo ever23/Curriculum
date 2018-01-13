@@ -1,5 +1,5 @@
 
-# Enyerber Franco   [![CcMvc](images/pdf.gif "CcMvc")](https://ever23.github.io/Curriculum/Curriculum%20Enyerber%20Franco.pdf)
+# Enyerber Franco                                                                 [![CcMvc](images/html.gif "CcMvc")](https://ever23.github.io/Curriculum/){.btn.btn-lg.btn-success} [![CcMvc](images/pdf.gif "CcMvc")](https://ever23.github.io/Curriculum/Curriculum%20Enyerber%20Franco.pdf){.btn.btn-lg.btn-success}
 ## Desarrollador (Full Stack Developer)
 
 - [enyerverfranco@gmail.com](enyerverfranco@gmail.com "gmail") 
@@ -14,7 +14,7 @@ Soy un Ingeniero de sistemas nacido en 1995.
 
 Empecé a experimentar en el mundo de la programación a los 16 años, pues desde niño me ha apasionado e intrigado el funcionamiento de computadoras y sus programas
 
-Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje C++ el juego se llama Star Trek Game
+Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje C++ el juego se llama [Star Trek Game](https://github.com/ever23/StarTrek-game "Star Trek Game") 
 
 Luego me dedique  al entorno web, donde me desempeño hasta el día de hoy, mi principal fortaleza es el desarrollo de aplicaciones backend, principalmente en PHP, también me dedico a el desarrollo frontend usando como principal libreria bootstrap.
 
@@ -76,7 +76,7 @@ Universidad Nacional Experimental de las Fuerzas Armadas (UNEFA)
 
 * Se creo un entorno de trabajo para programadores que facilita y optimisa el proceso de desarrollo de sitios web.
 * se entrego un entorno de trabajo enfocado en la optimización de los sitios web así como la seguridad de los mismos.
-* Se publico el framework CcMvc en un repositorio de github bajo una licencia LGPL para que los programadores web lo utilicen libremente.
+* Se publico el framework CcMvc en un [repositorio de github](https://github.com/ever23/CcMvc "CcMvc")  bajo una licencia LGPL para que los programadores web lo utilicen libremente.
 
 
 
