@@ -1,12 +1,12 @@
 
-# Enyerber Franco   [https://ever23.github.io/Curriculum/Curriculum%20Enyerber%20Franco.pdf](![CcMvc](images/pdf.gif "CcMvc"))
+# Enyerber Franco   [![CcMvc](images/pdf.gif "CcMvc")](https://ever23.github.io/Curriculum/Curriculum%20Enyerber%20Franco.pdf)
 ## Desarrollador (Full Stack Developer)
 
 - [enyerverfranco@gmail.com](enyerverfranco@gmail.com "gmail") 
 - +58 414 712 5102
-- [https://github.com/ever23](github "Github") 
-- [https://facebook.com/enyerber.franco](Facebook "Facebook") 
-- [https://www.linkedin.com/in/enyerber-franco-quintero-a54b48126](LinkedIn "LinkedIn") 
+- [github](https://github.com/ever23 "Github") 
+- [Facebook](https://facebook.com/enyerber.franco "Facebook") 
+- [LinkedIn](https://www.linkedin.com/in/enyerber-franco-quintero-a54b48126 "LinkedIn") 
 ---
 
 ## Introduccion
