@@ -48,7 +48,7 @@ Luego me dedique  al entorno web, donde me desempeño hasta el día de hoy, mi p
 > **Habilidades:** PHP, HTML5, CSS3, Javascript, Jquery, Ajax, Mysql
 
 
-#### Back End WEB Developer                 Enero 2017 - Remoto
+#### Front End WEB Developer                 Enero 2017 - Remoto
 ### Independiente
 
 - Diseño de temas usando css y bosstrap para el sistema pfsense
