@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Copyright (C) 2016 Enyerber Franco
@@ -53,6 +53,8 @@ $domPdf->loadHtml(file_get_contents($basedir . "index.html"));
  * agrego una etiqueta link con la referencia css especial para Dompdf
  */
 $head = $domPdf->getDom()->getElementsByTagName('head');
+
+
 $node = $domPdf->getDom()->createElement("link");
 $node->setAttribute('rel', "stylesheet");
 $node->setAttribute('href', "css/mediaDompdf.css");
