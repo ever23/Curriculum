@@ -1,5 +1,8 @@
 @media dompdf
 {
+     .fa {
+        display: none!important;
+    }
     body
     {
         font-family:sans-serif !important;
