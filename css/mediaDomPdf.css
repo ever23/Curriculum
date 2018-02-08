@@ -1,7 +1,26 @@
 @media dompdf
 {
-     .fa {
+
+    .skillset .item
+    {
+        margin-bottom: 0px!important;
+    }
+
+    blockquote {
+
+        margin-bottom: 0px!important;
+
+
+    }
+    .label{
+        padding: 0px!important;
+    }
+    .fa {
         display: none!important;
+    }
+    .container-block{
+        padding-top: 10px!important;
+        padding-bottom: 10px!important;
     }
     body
     {
@@ -9,7 +28,10 @@
         background: #fff;
         /* margin-top: -30px;*/
     }
-    @media (max-width: 767px) {
+    .main-wrapper .section {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 767px) { 
         .main-wrapper {
             padding: 0px;
             position: absolute !important;
@@ -35,7 +57,7 @@
 
         .skillset .level-bar {
             display: inline-block;
-            width: 70%;
+            width: 40%;
             float: left;
             position: relative;
             top: 1px;

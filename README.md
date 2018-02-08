@@ -9,15 +9,16 @@
 - [LinkedIn](https://www.linkedin.com/in/enyerber-franco-quintero-a54b48126 "LinkedIn") 
 ---
 
-## Introduccion
+## Perfil
 Soy un Ingeniero de sistemas nacido en 1995. 
 
 Empecé a experimentar en el mundo de la programación a los 16 años, pues desde niño me ha apasionado e intrigado el funcionamiento de computadoras y sus programas
 
 Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje C++ el juego se llama [Star Trek Game](https://github.com/ever23/StarTrek-game "Star Trek Game") 
 
-Luego me dedique  al entorno web, donde me desempeño hasta el día de hoy, mi principal fortaleza es el desarrollo de aplicaciones backend, principalmente en PHP, también me dedico a el desarrollo frontend usando como principal libreria bootstrap.
+Luego me dedique al  entorno web, donde me desempeño hasta el día de hoy, mi principal fortaleza es el desarrollo de aplicaciones backend, principalmente en PHP usando arquitectura Mvc con diferentes frameworks como Codeigniter, Laravel y [CcMvc](https://github.com/ever23/CcMvc/ "CcMvc") el cual e desarrollado por cuentra propia.
 
+También me dedico a el desarrollo frontend usando como principal libreria bootstrap.
 
 ---
 
@@ -29,7 +30,7 @@ Luego me dedique  al entorno web, donde me desempeño hasta el día de hoy, mi p
 
 ### Lenguajes y Frameworks Principales
 > PHP, HTML5, CSS & LESS, Bootstrap, PostgreSQL, MySQL, SqlIte, Javascript & jQuery
-> C y C++, Angular, Laravel, Codeigniter
+> C y C++, Laravel, Codeigniter
 
 
 ### Otras Tecnologias
