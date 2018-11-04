@@ -29,7 +29,7 @@ También me dedico a el desarrollo frontend usando como principal libreria boots
 - Español: *Basico*.
 
 ### Lenguajes y Frameworks Principales
-> PHP, HTML5, CSS & LESS, Bootstrap, PostgreSQL, MySQL, SqlIte, Javascript & jQuery
+> PHP, HTML5, CSS & LESS, Bootstrap, PostgreSQL, MySQL, SqlIte, Javascript, jQuery, vue.js, electron.js, node.js, express.js
 > C y C++, Laravel, Codeigniter
 
 
