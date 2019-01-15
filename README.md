@@ -1,5 +1,5 @@
 
-# Enyerber Franco                                                                 [![CcMvc](images/html.gif "CcMvc")](https://ever23.github.io/Curriculum/) [![CcMvc](images/pdf.gif "CcMvc")](https://ever23.github.io/Curriculum/Curriculum%20Enyerber%20Franco.pdf)
+# Enyerber Franco                                                                 [![CcMvc](images/html.gif "CcMvc")](https://ever23.github.io/Curriculum/) 
 ## Desarrollador (Full Stack Developer)
 
 - [enyerverfranco@gmail.com](enyerverfranco@gmail.com "gmail") 
@@ -16,9 +16,9 @@ Empecé a experimentar en el mundo de la programación a los 16 años, pues desd
 
 Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje C++ el juego se llama [Star Trek Game](https://github.com/ever23/StarTrek-game "Star Trek Game") 
 
-Luego me dedique al  entorno web, donde me desempeño hasta el día de hoy, mi principal fortaleza es el desarrollo de aplicaciones backend, principalmente en PHP usando arquitectura Mvc con diferentes frameworks como Codeigniter, Laravel y [CcMvc](https://github.com/ever23/CcMvc/ "CcMvc") el cual e desarrollado por cuentra propia.
+Luego me dedique al  entorno web, donde me desempeño hasta el día de hoy, mi principal fortaleza es el desarrollo de aplicaciones backend, principalmente en PHP usando arquitectura Mvc con [CcMvc](https://github.com/ever23/CcMvc/ "CcMvc") el cual e desarrollado por cuentra propia, tabien he trabajdo con javascript, node.js y express.
 
-También me dedico a el desarrollo frontend usando como principal libreria bootstrap.
+También me dedico a el desarrollo frontend usando como principal libreria bootstrap y vue.js.
 
 ---
 
