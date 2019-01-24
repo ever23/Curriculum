@@ -99,6 +99,7 @@ p {
 }
 .sidebar-wrapper .container-block {
     padding: 30px;
+    padding-right: 20px;
 }
 .sidebar-wrapper .container-block-title {
     text-transform: uppercase;
