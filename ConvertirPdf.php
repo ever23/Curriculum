@@ -48,7 +48,13 @@ $domPdf->setPaper("letter", "legal");
 /**
  * cargo el html del curriculum 
  */
-$domPdf->loadHtml(file_get_contents($basedir . "index.html"));
+$file = "index";
+
+if($_GET['file']){
+    $file=$_GET['file'];
+}
+
+$domPdf->loadHtml(file_get_contents($basedir . $file . ".html"));
 /**
  * agrego una etiqueta link con la referencia css especial para Dompdf
  */
