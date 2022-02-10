@@ -10,15 +10,15 @@
 ---
 
 ## Perfil
-Soy un Ingeniero de sistemas nacido en 1995. 
+Soy un **Ingeniero de sistemas** nacido en 1995. 
 
 Empecé a experimentar en el mundo de la programación a los 16 años, pues desde niño me ha apasionado e intrigado el funcionamiento de computadoras y sus programas
 
-Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje C++ el juego se llama [Star Trek Game](https://github.com/ever23/StarTrek-game "Star Trek Game") 
+Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje **C++** el juego se llama [Star Trek Game](https://github.com/ever23/StarTrek-game "Star Trek Game") 
 
-Luego me dedique al  entorno web, donde me desempeño hasta el día de hoy, mi principal fortaleza es el desarrollo de aplicaciones backend, principalmente en PHP usando arquitectura Mvc con [CcMvc](https://github.com/ever23/CcMvc/ "CcMvc") el cual e desarrollado por cuentra propia, tabien he trabajdo con javascript, node.js y express.
+Luego me dedique al  entorno web, donde me desempeñe en mis incios usando principalmente **PHP** en la arquitectura Mvc con [CcMvc](https://github.com/ever23/CcMvc/ "CcMvc") el cual e desarrollado por cuentra propia.
 
-También me dedico a el desarrollo frontend usando como principal libreria bootstrap y vue.js.
+Hoy en dia mi principal fortaleza esta en el lenguaje **Javascrit** tanto de backend usando **express.js** como en frontend con **vue.js**, pero tambien me enfrento con firmeza a cualquier reto que se me presente.
 
 ---
 
@@ -55,6 +55,14 @@ También me dedico a el desarrollo frontend usando como principal libreria boots
 - Diseño de temas usando css y bosstrap para el sistema pfsense
 
 > **Habilidades:** Css3, HTML5, Boostrap
+
+#### >Back End WEB Developer          2019 - Remoto
+### Jida Desarrollos
+
+- Programador Back End principalmente en php
+- Desarrollo de sitios web y apis
+
+> **Habilidades:** PHP, HTML5, CSS3, Javascript, Jquery, Ajax, Mysql
 
 
 ---
