@@ -1,92 +1,87 @@
-
-# Enyerber Franco                                                                 [![CcMvc](images/html.gif "CcMvc")](https://ever23.github.io/Curriculum/) [![CcMvc](images/pdf.gif "CcMvc")](https://ever23.github.io/Curriculum/Curriculum%20Enyerber%20Franco.pdf) 
-## Desarrollador (Full Stack Developer)
-
-- [enyerverfranco@gmail.com](enyerverfranco@gmail.com "gmail") 
-- +58 414 712 5102 - +58 426 602 3263
-- [github](https://github.com/ever23 "Github") 
-- [Facebook](https://facebook.com/enyerber.franco "Facebook") 
-- [LinkedIn](https://www.linkedin.com/in/enyerber-franco-quintero-a54b48126 "LinkedIn") 
+---
+name: Enyerber Franco
+title: Arquitecto Full Stack & IA Integrator
+email: enyerverfranco@gmail.com
+phone: +58 426 6023263
+github: ever23
+linkedin: enyerber-franco-quintero-a54b48126
+profile_pic: images/perfil.jpg
 ---
 
-## Perfil
-Soy un **Ingeniero de sistemas** nacido en 1995. 
+# Enyerber Franco | Ingeniero de Sistemas
+## Arquitecto Full Stack & IA Integrator
 
-Empecé a experimentar en el mundo de la programación a los 16 años, pues desde niño me ha apasionado e intrigado el funcionamiento de computadoras y sus programas
-
-Mi primera meta cuando inicie era obtener los conocimientos suficientes para crear un juego propio la cual logre haciendo uso del lenguaje **C++** el juego se llama [Star Trek Game](https://github.com/ever23/StarTrek-game "Star Trek Game") 
-
-Luego me dedique al  entorno web, donde me desempeñe en mis incios usando principalmente **PHP** en la arquitectura Mvc con [CcMvc](https://github.com/ever23/CcMvc/ "CcMvc") el cual e desarrollado por cuentra propia.
-
-Hoy en dia mi principal fortaleza esta en el lenguaje **Javascrit** tanto de backend usando **express.js** como en frontend con **vue.js**, pero tambien me enfrento con firmeza a cualquier reto que se me presente.
+**Ubicación:** Venezuela (Remoto / Presencial)  
+**Contacto:** [enyerverfranco@gmail.com](mailto:enyerverfranco@gmail.com) | +58 426 6023263  
+**GitHub:** [github.com/ever23](https://github.com/ever23) | **LinkedIn:** [enyerber-franco-quintero](https://www.linkedin.com/in/enyerber-franco-quintero-a54b48126)
 
 ---
 
-## Habilidades
-
-### Idiomas
-- Español: *Nativo*.
-- Español: *Basico*.
-
-### Lenguajes y Frameworks Principales
-> PHP, HTML5, CSS & LESS, Bootstrap, PostgreSQL, MySQL, SqlIte, Javascript, jQuery, vue.js, electron.js, node.js, express.js
-> C y C++, Laravel, Codeigniter
-
-
-### Otras Tecnologias
-> GNU/Linux, Git, Photoshop
+## Perfil Profesional
+Ingeniero de Sistemas con más de **10 años de experiencia** transformando requerimientos complejos en soluciones técnicas eficientes. Especialista en modernizar flujos de trabajo críticos mediante la creación de herramientas personalizadas, automatización asistida por **IA (LLMs/Gemini)** y diseño de infraestructuras modulares escalables. Experto en el ecosistema **JavaScript (Node.js/Vue 3)** y arquitecturas de datos SQL de alto rendimiento.
 
 ---
 
-## Experiencia Laboral
+## Experiencia Reciente Destacada
 
-#### Full Stack WEB Developer               2016 - Presente
-### Organizacion Venezolana en Seguridad Industrial
+### Arquitecto Full Stack | Sistema de Gestión Académica (Privado)
+**2021 – Presente**  
+*Desarrollo de una plataforma integral para el control de notas, asistencia y reportes institucionales.*
 
-- Desarrollo de un Sistema web para la gestion de compras, ventas y clientes
-- Desarrollo un sitio web
+*   **Escalabilidad de Datos:** Diseñé un backend robusto capaz de procesar **>2,000 registros trimestrales** con integridad total, utilizando **Node.js, Express y SQLite** bajo una arquitectura modular.
+*   **Innovación con IA:** Reduje en un **70% el tiempo de digitalización** manual mediante la implementación de un **"Escáner con IA" (Gemini API)** que procesa documentos físicos y registros no estructurados con alta precisión.
+*   **Eficiencia de Sesiones:** Resolví vulnerabilidades críticas y problemas de persistencia implementando **autenticación JWT**, optimizando la estabilidad del sistema en entornos concurrentes.
+*   **Optimización UI/UX:** Migré el frontend de tecnologías legadas a **Vue 3 + Vite**, mejorando el rendimiento de carga y la experiencia de usuario con interfaces dinámicas y receptivas.
 
-> **Habilidades:** PHP, HTML5, CSS3, Javascript, Jquery, Ajax, Mysql
+### Docente Universitario | UPPTMBI (Trujillo)
+**Mayo 2025 – Presente**  
+*Cátedras de Programación y Bases de Datos.*
 
+*   **Capacitación Técnica:** Imparto cátedras de **Programación, Bases de Datos, Redes y Arquitectura del Computador**, formando a la próxima generación de desarrolladores bajo estándares de industria.
+*   **Innovación Educativa:** Integré conceptos de **Modern JS (ES6+)**, micro-arquitecturas de servidores y optimización de consultas SQL en el programa académico, alineando la teoría universitaria con las demandas reales del mercado laboral actual.
 
-#### Front End WEB Developer                 Enero 2017 - Remoto
-### Independiente
-
-- Diseño de temas usando css y bosstrap para el sistema pfsense
-
-> **Habilidades:** Css3, HTML5, Boostrap
-
-#### >Back End WEB Developer          2019 - Remoto
-### Jida Desarrollos
-
-- Programador Back End principalmente en php
-- Desarrollo de sitios web y apis
-
-> **Habilidades:** PHP, HTML5, CSS3, Javascript, Jquery, Ajax, Mysql
-
+### Back End WEB Developer | Jida Desarrollos
+**2019 – 2021**
+*   **Desarrollo de APIs:** Lideré el diseño y mantenimiento de APIs RESTful en **PHP** para diversos clientes, asegurando la interoperabilidad entre sistemas distribuidos.
+*   **Gestión de Datos:** Optimicé consultas en **MySQL** para sitios de alto tráfico, mejorando los tiempos de respuesta en un 30%.
 
 ---
 
-## Educacion
+## Proyectos y Contribuciones Open Source
 
-### Ingenieria de Sistemas
+### Antigravity Bridge | VS Code Extension & AI Tooling (2024 – Presente)
+*   **Innovación en Productividad:** Desarrollé una extensión nativa para **VS Code** que permite la sincronización en tiempo real entre dispositivos móviles e IDEs, optimizando el flujo de trabajo de desarrollo asistido por **IA**.
+*   **Control Remoto para Devs:** Implementé una arquitectura de comunicación bidireccional que transforma el smartphone en una unidad de control externa, permitiendo la ejecución de comandos y visualización de estados del editor de forma remota.
 
-Universidad Nacional Experimental de las Fuerzas Armadas (UNEFA)
-*2013 - 2017*
+### Desarrollo de Librerías de Abstracción (2021 – Presente)
+*   **sqlite3-tab, pg-table, mysql-tab:** Creé una suite de herramientas para el manejo de bases de datos SQL usando **Javascript ES6+**, ofreciendo una API de alto nivel que reduce el "boilerplate code" en un **60%** y garantiza la seguridad de tipos y persistencia.
 
-> **Habilidades:** Turbo Pascal, C, PHP, Bases de datos relacionales, Redes, linux
+### CcMvc Framework | PHP (2017 – 2021)
+*   Diseñé y desarrollé un **Framework MVC ligero** propietario, inspirado en las mejores prácticas de Laravel y CodeIgniter, enfocado en optimizar el rendimiento y la seguridad en servidores con recursos limitados.
 
-
-
-#### Proyecto final
-
-> "Desarrollo de un Framework para la Programacion de Sitios Web"
-
-
-* Se creo un entorno de trabajo para programadores que facilita y optimisa el proceso de desarrollo de sitios web.
-* se entrego un entorno de trabajo enfocado en la optimización de los sitios web así como la seguridad de los mismos.
-* Se publico el framework CcMvc en un [repositorio de github](https://github.com/ever23/CcMvc "CcMvc")  bajo una licencia LGPL para que los programadores web lo utilicen libremente.
-
-
+### Star Trek Game | C++ (2014)
+*   Desarrollo integral de un motor de juego estilo Galaga utilizando **C++**, demostrando fundamentos sólidos en lógica de programación y manejo de recursos de bajo nivel.
 
 ---
+
+## Habilidades Técnicas
+
+*   **Lenguajes:** JavaScript (ES6+), PHP, C++, SQL (PostgreSQL, MySQL, SQLite).
+*   **Frameworks & Librerías:** Vue.js (v2/v3), Vite, Node.js, Express, Bootstrap, Tailwind CSS.
+*   **Habilidades de Infraestructura:** Arquitectura del Computador, Redes (Principios CCNA), Seguridad Informática.
+*   **IA & Automatización:** Gemini API, Agentic Coding, Creación de MCP Servers y Entornos de Desarrollo asistidos por Agentes.
+*   **Herramientas:** Git, Docker, VS Code Extension API, Linux.
+
+---
+
+## Educación
+
+**Ingeniero de Sistemas**  
+Universidad Nacional Experimental de las Fuerzas Armadas (UNEFA) | *2013 - 2017*  
+> **Proyecto de Grado:** "Desarrollo de un Framework (CcMvc) para la Optimización de Sitios Web".
+
+---
+
+## Idiomas
+*   **Español:** Nativo.
+*   **Inglés:** Nivel Técnico.
