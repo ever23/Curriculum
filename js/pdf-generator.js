@@ -1,21 +1,23 @@
 /* 
     ENYERBER FRANCO // PROFESSIONAL PORTFOLIO 
-    ELITE PDF ENGINE V5.7 (FINAL STABLE RESTORATION)
+    ELITE PDF ENGINE V7.4 (FETCH PRODUCTION VERSION)
+    Loads README.md dynamically via Fetch API
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.getElementById('downloadCV');
     
     if (downloadBtn) {
-        downloadBtn.addEventListener('click', () => {
+        downloadBtn.addEventListener('click', async () => {
             try {
-                const readmeScript = document.getElementById('readme-data');
-                if (!readmeScript) throw new Error("No fuente.");
+                // --- STEP 1: FETCH REAL README.MD ---
+                const response = await fetch('README.md');
+                if (!response.ok) throw new Error("Could not find README.md file.");
                 
-                const rawMarkdown = readmeScript.textContent.replace(/\r\n/g, '\n');
+                const rawMarkdown = (await response.text()).replace(/\r\n/g, '\n');
                 const linesStr = rawMarkdown.split('\n'); 
 
-                // --- DATA EXTRACTION (V4.7 ORIGINAL STABLE) ---
+                // --- DATA EXTRACTION LOGIC ---
                 const extractData = (keyword) => {
                     let capturing = false;
                     let result = [];
@@ -24,8 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (tl.startsWith('##') && tl.includes(keyword.toLowerCase())) {
                             capturing = true; continue;
                         }
-                        // Stop at next section header
-                        if (capturing && (tl.startsWith('## '))) {
+                        if (capturing && (tl.startsWith('##'))) {
                             capturing = false; break;
                         }
                         if (capturing) result.push(line);
@@ -44,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     return "";
                 };
 
-                const fullName = (linesStr.find(l => l.trim().startsWith('# ')) || "# ENYERBER FRANCO").replace('#', '').trim().toUpperCase();
+                const fullName = "ENYERBER FRANCO";
                 const location = getSingleContact('Ubicación');
-                const email    = (rawMarkdown.match(/[a-zA-Z0-9._%+-]+@?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/) || ["enyerverfranco@gmail.com"])[0];
+                const email    = "enyerverfranco@gmail.com";
                 const github   = getSingleContact('GitHub');
                 const linkedin = getSingleContact('LinkedIn');
 
@@ -57,13 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const maxWidth = 180;
                 let y = margin;
 
-                // --- RICH TEXT RENDERER (V4.7 ORIGINAL STABLE) ---
+                // --- RICH TEXT RENDERER ---
                 const addRichText = (text, size = 9.5, color = [60,60,60]) => {
                     doc.setFontSize(size);
                     const lineHeight = size / 2.2 + 2.5;
                     let currentX = margin;
                     const tokens = [];
                     const parts = text.split(/(\*\*.*?\*\*)/g);
+                    
                     parts.forEach(part => {
                         if (part.startsWith('**') && part.endsWith('**')) {
                             const boldContent = part.replace(/\*\*/g, '');
@@ -71,20 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
                                 if (w) tokens.push({ text: w + (i < arr.length - 1 ? ' ' : ''), bold: true });
                             });
                         } else {
-                            part.split(' ').forEach((w, i, arr) => {
+                            const cleanPart = part.replace(/^[#\*\-\s•>]+/g, '');
+                            cleanPart.split(' ').forEach((w, i, arr) => {
                                 if (w || i < arr.length - 1) tokens.push({ text: w + (i < arr.length - 1 ? ' ' : ''), bold: false });
                             });
                         }
                     });
+
                     tokens.forEach(token => {
                         doc.setFont('helvetica', token.bold ? 'bold' : 'normal');
                         doc.setTextColor(color[0], color[1], color[2]);
-                        const tw = doc.getTextWidth(token.text);
-                        if (currentX + tw > margin + maxWidth) { currentX = margin; y += lineHeight; }
+                        const wordWidth = doc.getTextWidth(token.text);
+                        if (currentX + wordWidth > margin + maxWidth) { currentX = margin; y += lineHeight; }
                         doc.text(token.text, currentX, y);
-                        currentX += tw;
+                        currentX += wordWidth;
                     });
-                    y += lineHeight + 0.5;
+                    y += lineHeight + 0.8;
                 };
 
                 const addHeader = (title) => {
@@ -93,14 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     y += 1.5; doc.setDrawColor(226, 232, 240); doc.line(margin, y, 195, y); y += 5;
                 };
 
-                // --- RENDER ---
-                // Header
+                // --- DOCUMENT BUILD ---
                 doc.setFont('helvetica', 'bold'); doc.setFontSize(22); doc.setTextColor(15, 23, 42);
                 doc.text(fullName, margin, y); y += 9;
                 doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(100, 100, 100);
-                doc.text(`${location}  |  ${email}`, margin, y); y += 6;
+                doc.text(`${location} | ${email}`, margin, y); y += 6;
                 doc.setTextColor(14, 165, 233); 
-                doc.text(`GitHub: ${github}  |  LinkedIn: ${linkedin}`, margin, y); y += 9;
+                doc.text(`GitHub: ${github} | LinkedIn: ${linkedin}`, margin, y); y += 9;
 
                 addHeader('Perfil Profesional');
                 addRichText(extractData('Perfil'), 9.5);
@@ -111,22 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 addHeader('Trayectoria Profesional');
-                const expRaw = extractData('Experiencia');
+                const expRaw = extractData('Experiencia') || extractData('Trayectoria');
                 const expBlocks = expRaw.split('\n\n');
                 expBlocks.forEach(block => {
                     const lines = block.split('\n').filter(l => l.trim());
                     if (lines.length > 0) {
                         doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); doc.setTextColor(15, 23, 42);
                         doc.text(lines[0].replace(/^[#\*\s]+/g, '').trim(), margin, y); y += 5;
-                        let bulFound = 0;
+                        let foundBullets = 0;
                         for(let i=1; i < lines.length; i++){
                             let l = lines[i].trim();
                             if(/(\d{4}|presente)/i.test(l) && l.length < 35) {
                                 doc.setFont('helvetica', 'italic'); doc.setFontSize(8.5); doc.setTextColor(120, 120, 120);
                                 doc.text(l.replace(/[\*#•]/g, '').trim(), margin, y); y += 4.5;
-                            } else if (bulFound < 1) {
-                                addRichText(`• ${l}`, 9.5);
-                                bulFound++;
+                            } else if (foundBullets < 1) {
+                                addRichText(`• ${l}`, 9.5); foundBullets++;
                             }
                         }
                         y += 1.5;
@@ -135,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 addHeader('Proyectos de Impacto');
                 extractData('Proyectos').split('\n').filter(l => l.trim()).forEach(l => {
-                    addRichText(`• ${l.replace(/^### (.*)/gm, '$1').replace(/^[#\*\-\s•]+/g, '')}`, 9.5);
+                    addRichText(`• ${l.replace(/^### (.*)/gm, '$1').replace(/^[#\*\s]+/g, '').trim()}`, 9.5);
                 });
 
                 addHeader('Formación Académica');
@@ -145,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 doc.save(`${fullName.replace(/\s/g, '_')}_CV.pdf`);
 
-            } catch (error) { console.error(error); alert("Error al generar PDF."); }
+            } catch (error) { console.error(error); alert("Error al generar PDF: Asegúrate de correr el sitio desde un servidor (Live Server) para cargar el README.md."); }
         });
     }
 });
