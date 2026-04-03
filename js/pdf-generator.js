@@ -1,186 +1,163 @@
-/* 
-    ENYERBER FRANCO // PROFESSIONAL PORTFOLIO 
-    ELITE PDF ENGINE V7.5 (FINAL MASTER RESTORATION)
-    Fixes spacing issues and robust section extraction
+/* ENYERBER FRANCO // PROFESSIONAL PORTFOLIO 
+    ULTRA-COMPACT ATS ENGINE V13 (APA STYLE FONTS & SPACING)
+    1-Page Guarantee + APA Arial/Helvetica 11pt Standard
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.getElementById('downloadCV');
-    
+
     if (downloadBtn) {
         downloadBtn.addEventListener('click', async () => {
             try {
-                // --- STEP 1: FETCH REAL README.MD ---
-                const response = await fetch('README.md');
-                if (!response.ok) throw new Error("Could not find README.md");
-                
+                // --- STEP 1: FETCH DATA ---
+                const response = await fetch('README.md?t=' + Date.now());
                 const rawMarkdown = (await response.text()).replace(/\r\n/g, '\n');
-                const linesStr = rawMarkdown.split('\n'); 
+                const linesStr = rawMarkdown.split('\n');
 
-                // --- DATA EXTRACTION LOGIC (ROBUST VERSION) ---
                 const extractData = (keywords) => {
                     const keys = Array.isArray(keywords) ? keywords : [keywords];
-                    let capturing = false;
-                    let result = [];
-                    
+                    let capturing = false; let result = [];
+                    const sectionHeaderRegex = new RegExp(`^##\\s*(${keys.join('|')})`, 'i');
                     for (let line of linesStr) {
-                        const tl = line.trim().toLowerCase();
-                        // Check if line is a header containing any of the keywords
-                        const isMatch = tl.startsWith('##') && keys.some(k => tl.includes(k.toLowerCase()));
-                        
-                        if (isMatch) {
-                            capturing = true; continue;
-                        }
-                        if (capturing && tl.startsWith('##')) {
-                            capturing = false; break;
-                        }
+                        const tl = line.trim();
+                        if (sectionHeaderRegex.test(tl)) { capturing = true; continue; }
+                        if (capturing && /^##\s+/.test(tl) && !sectionHeaderRegex.test(tl)) { capturing = false; break; }
                         if (capturing) result.push(line);
                     }
-                    const final = result.join('\n').trim();
-                    return final.length > 0 ? final : null;
+                    return result.length > 0 ? result.join('\n').trim() : null;
                 };
 
-                const getSingleContact = (label) => {
-                    for(let l of linesStr) {
-                        if(l.toLowerCase().includes(label.toLowerCase())) {
-                            const parts = l.split('|');
-                            const target = parts.find(p => p.toLowerCase().includes(label.toLowerCase()));
-                            if(target) return target.split(':').pop().replace(/[\*\:\[\]]|(\(.*\))/g, '').trim();
-                        }
-                    }
-                    return "";
-                };
-
-                const fullName = "ENYERBER FRANCO";
-                const location = getSingleContact('Ubicación');
-                const email    = "enyerverfranco@gmail.com";
-                const github   = getSingleContact('GitHub');
-                const linkedin = getSingleContact('LinkedIn');
-
-                // --- PDF CONFIG ---
+                // --- PDF SETUP ---
                 const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
-                const margin = 15;
-                const maxWidth = 180;
-                let y = margin;
+                const doc = new jsPDF({ unit: 'pt', format: 'a4' });
 
-                // --- RICH TEXT RENDERER (V2 - SMART SPACING) ---
-                const addRichText = (text, size = 9.5, color = [60,60,60]) => {
+                // Márgenes más cercanos a APA (1 pulgada = 72pt, usamos 54pt para balancear CV)
+                const m = 54;
+                const maxWidth = 487; // 595 (A4 width) - (54 * 2)
+                let y = 45; // Margen superior inicial
+
+                // --- SMART RICH TEXT ENGINE ---
+                const renderRichLine = (text, size, isGlobalBold = false, color = [51, 65, 85], indent = 0, isBullet = false) => {
                     doc.setFontSize(size);
-                    const lineHeight = size / 2.2 + 2.5;
-                    let currentX = margin;
-                    
-                    // Split while keeping delimiters
-                    const parts = text.split(/(\*\*.*?\*\*)/g);
-                    
+                    doc.setTextColor(color[0], color[1], color[2]);
+
+                    let cleanText = text.trim();
+                    if (cleanText.startsWith('### ')) cleanText = cleanText.substring(4);
+                    if (cleanText.startsWith('- ')) cleanText = cleanText.substring(2);
+                    if (cleanText.startsWith('* ')) cleanText = cleanText.substring(2);
+
+                    const parts = cleanText.split(/(\*\*.*?\*\*)/g);
+                    let currentX = m + indent;
+                    const lineHeight = size + 4.5; // Interlineado tipo APA adaptado para CV
+
+                    if (isBullet) {
+                        doc.setFont('helvetica', 'normal');
+                        doc.text("•", m + indent - 12, y);
+                    }
+
                     parts.forEach(part => {
                         if (!part) return;
+                        const isPartBold = part.startsWith('**') && part.endsWith('**');
+                        const content = isPartBold ? part.replace(/\*\*/g, '') : part;
 
-                        if (part.startsWith('**') && part.endsWith('**')) {
-                            doc.setFont('helvetica', 'bold');
-                            const boldContent = part.replace(/\*\*/g, '');
-                            const words = boldContent.split(' ');
-                            words.forEach((w, i) => {
-                                const word = w + (i < words.length - 1 ? ' ' : '');
-                                const width = doc.getTextWidth(word);
-                                if (currentX + width > margin + maxWidth) { currentX = margin; y += lineHeight; }
-                                doc.text(word, currentX, y);
-                                currentX += width;
-                            });
-                        } else {
-                            doc.setFont('helvetica', 'normal');
-                            // Only clean markdown symbols at the VERY START of the whole line if necessary, 
-                            // but here we just process the part.
-                            const cleanPart = part.replace(/^[#\-\s•>]+/g, ' '); 
-                            const words = cleanPart.split(' ');
-                            words.forEach((w, i) => {
-                                if (!w && i < words.length - 1) { // Handle extra spaces
-                                     currentX += doc.getTextWidth(' ');
-                                     return;
-                                }
-                                const word = w + (i < words.length - 1 ? ' ' : '');
-                                const width = doc.getTextWidth(word);
-                                if (currentX + width > margin + maxWidth) { currentX = margin; y += lineHeight; }
-                                doc.text(word, currentX, y);
-                                currentX += width;
-                            });
-                        }
+                        doc.setFont('helvetica', (isGlobalBold || isPartBold) ? 'bold' : 'normal');
+
+                        const words = content.split(' ');
+                        words.forEach((word, idx) => {
+                            const w = word + (idx < words.length - 1 ? ' ' : '');
+                            const width = doc.getTextWidth(w);
+                            if (currentX + width > m + maxWidth) {
+                                currentX = m + indent;
+                                y += lineHeight;
+                            }
+                            doc.text(w, currentX, y);
+                            currentX += width;
+                        });
                     });
-                    y += lineHeight + 0.8;
+                    y += lineHeight + 2; // Separación entre párrafos
                 };
 
                 const addHeader = (title) => {
-                    y += 3; doc.setFont('helvetica', 'bold'); doc.setFontSize(11); doc.setTextColor(15, 23, 42); 
-                    doc.text(title.toUpperCase(), margin, y);
-                    y += 1.5; doc.setDrawColor(226, 232, 240); doc.line(margin, y, 195, y); y += 5;
+                    y += 12; // Más espacio antes del título (Estilo APA)
+                    doc.setFont('helvetica', 'bold'); doc.setFontSize(12); doc.setTextColor(15, 23, 42);
+                    doc.text(title.toUpperCase(), m, y);
+                    y += 5; doc.setDrawColor(200, 200, 200); doc.line(m, y, m + maxWidth, y);
+                    y += 14; // Separación después de la línea
                 };
 
-                // --- DOCUMENT BUILD ---
-                doc.setFont('helvetica', 'bold'); doc.setFontSize(22); doc.setTextColor(15, 23, 42);
-                doc.text(fullName, margin, y); y += 9;
-                doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(100, 100, 100);
-                doc.text(`${location} | ${email}`, margin, y); y += 6;
-                doc.setTextColor(14, 165, 233); 
-                doc.text(`GitHub: ${github} | LinkedIn: ${linkedin}`, margin, y); y += 9;
+                // --- 1. HEADER ---
+                doc.setFont('helvetica', 'bold'); doc.setFontSize(24); doc.setTextColor(15, 23, 42);
+                doc.text("ENYERBER FRANCO", m, y); y += 18;
 
-                addHeader('Perfil Profesional');
-                addRichText(extractData(['Perfil']) || "Perfil no disponible.");
+                doc.setFontSize(11); doc.setFont('helvetica', 'normal'); doc.setTextColor(71, 85, 105);
+                doc.text("Ingeniero de Sistemas | Arquitecto Full Stack & IA Integrator", m, y); y += 16;
 
-                addHeader('Habilidades Técnicas');
-                const skillsData = extractData(['Habilidades']);
-                if (skillsData) {
-                    skillsData.split('\n').filter(l => l.trim()).forEach(l => {
-                        addRichText(`• ${l.replace(/^[#\*\-\s•]+/g, '').trim()}`, 9.5);
-                    });
+                doc.setFontSize(10); doc.setTextColor(14, 165, 233);
+                doc.text("enyerverfranco@gmail.com | Trujillo, Venezuela | github.com/ever23", m, y); y += 10;
+
+                // --- 2. PERFIL ---
+                const perfil = extractData(['Perfil', 'Resumen']);
+                if (perfil) {
+                    addHeader("Perfil Profesional");
+                    renderRichLine(perfil, 11); // Tamaño APA estándar (11pt)
                 }
 
-                addHeader('Trayectoria Profesional');
-                const expRaw = extractData(['Experiencia', 'Trayectoria']);
-                if (expRaw) {
-                    const expBlocks = expRaw.split('\n\n');
-                    expBlocks.forEach(block => {
-                        const lines = block.split('\n').filter(l => l.trim());
-                        if (lines.length > 0) {
-                            doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); doc.setTextColor(15, 23, 42);
-                            doc.text(lines[0].replace(/^[#\*\s]+/g, '').trim(), margin, y); y += 5;
-                            let foundBullets = 0;
-                            for(let i=1; i < lines.length; i++){
-                                let l = lines[i].trim();
-                                if(/(\d{4}|presente)/i.test(l) && l.length < 35) {
-                                    doc.setFont('helvetica', 'italic'); doc.setFontSize(8.5); doc.setTextColor(120, 120, 120);
-                                    doc.text(l.replace(/[\*#•]/g, '').trim(), margin, y); y += 4.5;
-                                } else if (foundBullets < 1) {
-                                    addRichText(`• ${l.replace(/^[#\*\-\s•>]+/g, '').trim()}`, 9.5); 
-                                    foundBullets++;
-                                }
-                            }
-                            y += 1.5;
+                // --- 3. SKILLS ---
+                const skills = extractData(['Habilidades', 'Skills']);
+                if (skills) {
+                    addHeader("Habilidades Técnicas");
+                    skills.split('\n').forEach(l => {
+                        const tl = l.trim();
+                        if (tl.startsWith('-') || tl.startsWith('*')) {
+                            renderRichLine(tl, 10.5, false, [51, 65, 85], 14, true);
                         }
                     });
-                } else { addRichText("Información no disponible."); }
+                }
 
-                addHeader('Proyectos de Impacto');
-                const projData = extractData(['Proyectos']);
-                if (projData) {
-                    projData.split('\n').filter(l => l.trim()).forEach(l => {
-                        addRichText(`• ${l.replace(/^### (.*)/gm, '$1').replace(/^[#\*\-\s•>]+/g, '').trim()}`, 9.5);
+                // --- 4. EXPERIENCE & 5. PROJECTS ---
+                const processSection = (dataStr, title) => {
+                    if (!dataStr) return;
+                    addHeader(title);
+                    const lines = dataStr.split('\n');
+                    lines.forEach(l => {
+                        const tl = l.trim();
+                        if (!tl) return;
+
+                        if (tl.startsWith('###')) {
+                            y += 6;
+                            renderRichLine(tl, 11.5, true, [15, 23, 42], 0, false);
+                        }
+                        else if (/(\d{4}|presente)/i.test(tl) && !tl.startsWith('-') && !tl.startsWith('*')) {
+                            doc.setFont('helvetica', 'italic'); doc.setFontSize(10); doc.setTextColor(100, 116, 139);
+                            doc.text(tl.replace(/[\*#•]/g, '').trim(), m, y); y += 14;
+                        }
+                        else if (tl.startsWith('-') || tl.startsWith('*')) {
+                            renderRichLine(tl, 10.5, false, [51, 65, 85], 14, true); // Viñetas legibles
+                        }
+                        else {
+                            renderRichLine(tl, 10.5, false, [51, 65, 85], 0, false);
+                        }
                     });
-                } else { addRichText("Información no disponible."); }
+                };
 
-                addHeader('Formación Académica');
-                const eduData = extractData(['Educación', 'Formación']);
-                if (eduData) {
-                    eduData.split('\n').filter(l => l.trim()).forEach(l => {
-                        addRichText(l.trim(), 9.5);
+                processSection(extractData(['Experiencia', 'Trayectoria']), "Trayectoria Profesional");
+                processSection(extractData('Proyectos'), "Proyectos de Impacto");
+
+                // --- 6. EDUCATION & IDIOMAS ---
+                const edu = extractData('Formación') || extractData('Educación');
+                if (edu) {
+                    addHeader("Formación Académica");
+                    edu.split('\n').forEach(l => {
+                        const tl = l.trim();
+                        if (tl.startsWith('-') || tl.startsWith('*')) {
+                            renderRichLine(tl, 10.5, false, [51, 65, 85], 14, true);
+                        }
                     });
                 }
 
-                doc.save(`${fullName.replace(/\s/g, '_')}_CV.pdf`);
+                doc.save('ENYERBER_FRANCO_CV.pdf');
 
-            } catch (error) { 
-                console.error(error); 
-                alert("Error al generar PDF. Asegúrate de estar en un servidor local."); 
-            }
+            } catch (error) { console.error(error); alert("Error al generar PDF."); }
         });
     }
 });
