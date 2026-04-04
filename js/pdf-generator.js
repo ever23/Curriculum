@@ -3,11 +3,7 @@
     1-Page Guarantee + APA Arial/Helvetica 11pt Standard
 */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const downloadBtn = document.getElementById('downloadCV');
-
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', async () => {
+window.exportPDF = async () => {
             try {
                 // --- STEP 1: FETCH DATA ---
                 const response = await fetch('README.md?t=' + Date.now());
@@ -158,6 +154,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 doc.save('ENYERBER_FRANCO_CV.pdf');
 
             } catch (error) { console.error(error); alert("Error al generar PDF."); }
-        });
-    }
-});
+};

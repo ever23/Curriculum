@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/styles.css?v=1.12">
+    <link rel="stylesheet" href="css/styles.css?v=1.15">
 
     <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -22,31 +22,32 @@
 
 <body>
     <!-- Efectos de Fondo -->
-    <canvas id="matrix-bg"></canvas>
+    <div id="matrix-bg"></div>
     <div class="bg-glow"></div>
 
     <!-- Barra Lateral (Navigation) -->
     <aside class="sidebar">
         <div class="profile-section">
             <h1 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Enyerber Franco</h1>
-            <p style="color: var(--accent-primary); font-family: 'JetBrains Mono'; font-size: 0.75rem;">[ ENGINEER_V4.0 ]
+            <p style="color: var(--accent-primary); font-family: 'JetBrains Mono'; font-size: 0.75rem;">[ ENGINEER_V4.0
+                ]
             </p>
         </div>
 
         <nav style="margin-top: 3rem; flex-grow: 1;">
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
-                <li><a href="#overview" class="nav-link"><i data-lucide="Layout"></i><span>Overview</span></a></li>
-                <li><a href="#projects" class="nav-link"><i data-lucide="Code2"></i><span>Proyectos</span></a></li>
-                <li><a href="#experience" class="nav-link"><i data-lucide="Briefcase"></i><span>Trayectoria</span></a>
+                <li><a href="#overview" class="nav-link"><i data-lucide="layout"></i><span>Overview</span></a></li>
+                <li><a href="#projects" class="nav-link"><i data-lucide="code-2"></i><span>Proyectos</span></a></li>
+                <li><a href="#experience" class="nav-link"><i data-lucide="briefcase"></i><span>Trayectoria</span></a>
                 </li>
-                <li><a href="#contact" class="nav-link"><i data-lucide="Send"></i><span>Contacto</span></a></li>
+                <li><a href="#contact" class="nav-link"><i data-lucide="send"></i><span>Contacto</span></a></li>
             </ul>
         </nav>
 
         <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
             <button onclick="exportPDF()" class="nav-link"
                 style="background: transparent; border: none; width: 100%; cursor: pointer; color: var(--accent-primary);">
-                <i data-lucide="Download"></i><span>Exportar CV / PDF</span>
+                <i data-lucide="download"></i><span>Exportar CV / PDF</span>
             </button>
         </div>
     </aside>
@@ -132,7 +133,8 @@
                                 (tablamodel)</h3>
                             <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Suite de
                                 persistencia políglota (NPM) que automatiza el mapeo entre modelos JS y sentencias SQL.
-                                Genera esquemas dinámicos para SQLite, MySQL y PostgreSQL, reduciendo el boilerplate en un 60%.</p>
+                                Genera esquemas dinámicos para SQLite, MySQL y PostgreSQL, reduciendo el boilerplate en
+                                un 60%.</p>
                         </div>
                     </div>
 
@@ -219,12 +221,14 @@
                 <div style="height: 1px; flex-grow: 1; background: var(--border-subtle);"></div>
             </div>
 
-            <div style="background: var(--glass-bg); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 3.5rem; backdrop-filter: blur(15px);">
+            <div
+                style="background: var(--glass-bg); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 3.5rem; backdrop-filter: blur(15px);">
                 <div class="contact-grid">
                     <!-- Columna 1: WhatsApp Directo -->
                     <div class="contact-card">
-                        <div style="width: 80px; height: 80px; background: rgba(56, 189, 248, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                            <i data-lucide="MessageCircle" size="32" style="color: var(--accent-primary);"></i>
+                        <div
+                            style="width: 80px; height: 80px; background: rgba(56, 189, 248, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i data-lucide="message-circle" size="32" style="color: var(--accent-primary);"></i>
                         </div>
                         <h3 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 800;">¿Hablamos?</h3>
                         <p style="color: var(--text-mid); margin-bottom: 2.5rem; font-size: 1.1rem;">
@@ -239,25 +243,28 @@
                     <!-- Columna 2: Redes Profesionales -->
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <a href="https://github.com/ever23" target="_blank" class="contact-link-card">
-                            <i data-lucide="Github" size="24" style="color: var(--accent-primary);"></i>
+                            <i data-lucide="github" size="24" style="color: var(--accent-primary);"></i>
                             <div>
-                                <div style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
+                                <div
+                                    style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
                                     GITHUB</div>
                                 <div style="font-weight: 600;">@ever23</div>
                             </div>
                         </a>
                         <a href="mailto:enyerberfranco@gmail.com" class="contact-link-card">
-                            <i data-lucide="Mail" size="24" style="color: var(--accent-primary);"></i>
+                            <i data-lucide="mail" size="24" style="color: var(--accent-primary);"></i>
                             <div>
-                                <div style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
+                                <div
+                                    style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
                                     EMAIL</div>
                                 <div style="font-weight: 600; font-size: 0.9rem;">enyerberfranco@gmail.com</div>
                             </div>
                         </a>
                         <div class="contact-link-card">
-                            <i data-lucide="MapPin" size="24" style="color: var(--accent-primary);"></i>
+                            <i data-lucide="map-pin" size="24" style="color: var(--accent-primary);"></i>
                             <div>
-                                <div style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
+                                <div
+                                    style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
                                     UBICACIÓN</div>
                                 <div style="font-weight: 600;">Venezuela</div>
                             </div>
@@ -270,11 +277,11 @@
 
     <!-- ACCIONES FLOTANTES (MÓVIL) -->
     <button class="mobile-export-btn" id="mobile-pdf-btn" onclick="exportPDF()" aria-label="Descargar PDF">
-        <i data-lucide="ArrowDownToLine" size="28"></i>
+        <i data-lucide="arrow-down-to-line" size="28"></i>
     </button>
 
-    <script src="js/scripts.js"></script>
-    <script src="js/pdf-generator.js"></script>
+    <script src="js/scripts.js?v=1.15"></script>
+    <script src="js/pdf-generator.js?v=1.15"></script>
     <script>
         lucide.createIcons();
     </script>

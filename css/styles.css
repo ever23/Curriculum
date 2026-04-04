@@ -44,7 +44,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -2; /* Capa más profunda */
-    opacity: 0.25; /* Aumentamos un poco la visibilidad */
+    opacity: 0.45; /* Aumentamos visibilidad para que sea vea en el sidebar */
     pointer-events: none;
     overflow: hidden;
     background: var(--bg-deep); /* El color base vive aquí */
@@ -84,7 +84,7 @@ body {
     top: 0;
     bottom: 0;
     width: var(--sidebar-width);
-    background: rgba(2, 6, 23, 0.85);
+    background: rgba(2, 6, 23, 0.01); /* Casi invisible pero con blur */
     backdrop-filter: blur(12px);
     border-right: 1px solid var(--border-subtle);
     padding: 3rem 1.5rem;

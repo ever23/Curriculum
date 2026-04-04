@@ -61,8 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach(link => {
+            const href = link.getAttribute('href');
             link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
+            if (current && href && href.includes(current)) {
                 link.classList.add('active');
             }
         });
