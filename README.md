@@ -5,7 +5,7 @@ Trujillo, Venezuela | enyerverfranco@gmail.com | +58 426 6023263
 GitHub: github.com/ever23 | LinkedIn: linkedin.com/in/enyerber-franco-quintero-a54b48126
 
 ## PERFIL PROFESIONAL
-Ingeniero de Sistemas con más de **14 años de experiencia** transformando requerimientos complejos en soluciones técnicas eficientes. Especialista en modernizar flujos de trabajo críticos mediante la creación de herramientas personalizadas, automatización asistida por **IA (LLMs/Gemini)** y diseño de infraestructuras modulares escalables. Experto en el ecosistema **JavaScript (Node.js/Vue 3)** y arquitecturas de datos SQL.
+Ingeniero de Sistemas con más de **10 años de experiencia** transformando requerimientos complejos en soluciones técnicas eficientes. Especialista en modernizar flujos de trabajo críticos mediante la creación de herramientas personalizadas, automatización asistida por **IA (LLMs/Gemini)** y diseño de infraestructuras modulares escalables. Experto en el ecosistema **JavaScript (Node.js/Vue 3)** y arquitecturas de datos SQL.
 
 ## HABILIDADES TÉCNICAS
 - **Lenguajes:** JavaScript (ES6+), PHP, C++, SQL (PostgreSQL, MySQL, SQLite).
