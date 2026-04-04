@@ -145,6 +145,17 @@ body {
     width: calc(100% - var(--sidebar-width));
 }
 
+.mobile-header {
+    display: none;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    margin: 2rem 1.25rem 0 1.25rem;
+    backdrop-filter: blur(15px);
+}
+
 /* --- PROJECTS --- */
 .projects-scroll-container {
     position: relative;
@@ -424,6 +435,7 @@ body {
         transition: none !important;
     }
 
+    .mobile-header { display: block !important; }
     .mobile-export-btn { display: flex !important; }
 }
 
