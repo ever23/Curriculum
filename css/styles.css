@@ -350,36 +350,35 @@ body {
         border: none !important;
     }
     
-    section { padding: 4rem 0 !important; margin-bottom: 2rem !important; }
-    h1, h2, #overview { padding: 0 1.5rem !important; }
+    section { padding: 3rem 1.25rem !important; margin-bottom: 2rem !important; }
+    h1, h2, #overview { padding: 0 !important; }
     
     .summary-card, 
     #experience > div, 
     #contact > div { 
         width: 100% !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
         padding: 2.5rem 1.5rem !important; 
-        border-radius: 0 !important;
-        border-right: none !important;
-        border-left: none !important;
+        border-radius: 20px !important; /* Mantener bordes redondeados para un look premium */
+        border: 1px solid var(--border-subtle) !important;
     }
 
     .stats-grid {
         grid-template-columns: 1fr 1fr !important;
-        gap: 1rem !important;
+        gap: 0.75rem !important;
     }
 
     .projects-scroll-container {
         width: 100% !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 1rem 0 !important;
     }
 
     .projects-wrapper {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
         padding: 0 !important;
     }
 
@@ -388,26 +387,23 @@ body {
         width: 100% !important;
         min-width: 100% !important;
         margin: 0 !important;
-        border-radius: 0 !important;
-        border: none !important;
-        border-bottom: 1px solid var(--border-subtle) !important;
+        border-radius: 20px !important;
+        border: 1px solid var(--border-subtle) !important;
     }
 
-    .project-info { padding: 2rem 1.5rem !important; }
-    .project-img { height: 180px !important; }
+    .project-info { padding: 2rem 1.25rem !important; }
+    .project-img { height: 200px !important; }
     
     .projects-nav { display: none !important; }
     
     .contact-grid { 
         grid-template-columns: 1fr !important; 
-        gap: 1rem !important; 
+        gap: 1.5rem !important; 
     }
 
     .contact-card, .contact-link-card {
-        border-radius: 0 !important;
-        border-left: none !important;
-        border-right: none !important;
-        padding: 2rem 1.5rem !important;
+        border-radius: 16px !important;
+        padding: 2rem 1.25rem !important;
     }
 
     /* Mobile Typography Adjustments */
