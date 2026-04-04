@@ -406,6 +406,16 @@ body {
         padding: 2rem 1.5rem !important;
     }
 
+    /* Mobile Typography Adjustments */
+    .summary-card h1 { font-size: 2.2rem !important; }
+    .summary-card p { font-size: 1.1rem !important; }
+    .stat-value { font-size: 1.5rem !important; }
+    .stat-label { font-size: 0.65rem !important; }
+    
+    section div h2 { font-size: 0.65rem !important; letter-spacing: 0.2em !important; }
+    h3 { font-size: 1.3rem !important; }
+    p { font-size: 0.95rem !important; }
+
     /* Disable some animations on mobile for performance */
     .reveal-on-scroll, section > div, .project-card, .stat-card {
         opacity: 1 !important;
