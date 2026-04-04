@@ -4,15 +4,19 @@
 */
 
 :root {
-    --bg-deep: #020617;
-    --bg-sidebar: #0a0f1e;
-    --accent-primary: #38bdf8;
-    --accent-secondary: #94a3b8;
-    --text-high: #f8fafc;
+    --bg-deep: #12121e;           /* Tono capturado (Deep Navy/Black) */
+    --bg-sidebar: #0a0a0c;        /* Sidebar sutilmente contrastado */
+    
+    /* Colores extraídos directamente de las líneas de código del icono */
+    --accent-primary: #00f2ff;    /* Cian Eléctrico (Superior logo) */
+    --accent-secondary: #39ff14;  /* Verde Neón (Medio logo) */
+    --accent-tertiary: #ffd700;   /* Oro/Amarillo (Inferior logo) */
+    
+    --text-high: #ffffff;
     --text-mid: #94a3b8;
     --text-low: #475569;
-    --border-subtle: rgba(148, 163, 184, 0.1);
-    --glass-bg: rgba(15, 23, 42, 0.6);
+    --border-subtle: rgba(0, 242, 255, 0.1);
+    --glass-bg: rgba(10, 10, 15, 0.85);
     --sidebar-width: 320px;
 }
 
@@ -57,8 +61,8 @@ body {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 20% 80%, rgba(148, 163, 184, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 80% 20%, rgba(0, 242, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(57, 255, 20, 0.04) 0%, transparent 40%);
     z-index: -1; /* Entre el código y el contenido */
     pointer-events: none;
 }
@@ -491,4 +495,29 @@ body {
 
 .mobile-export-btn:active {
     transform: scale(0.9);
+}
+
+/* --- ESTILO COHERENTE CON EL LOGO --- */
+h2, .stat-card .stat-value {
+    color: var(--accent-secondary) !important;
+}
+
+.stat-card:nth-child(even) .stat-value {
+    color: var(--accent-tertiary) !important;
+}
+
+b, strong {
+    color: var(--accent-primary);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-primary) !important;
+    background: rgba(0, 242, 255, 0.08) !important;
+    border-color: rgba(0, 242, 255, 0.2) !important;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-secondary) !important;
+    box-shadow: 0 20px 40px rgba(57, 255, 20, 0.1);
 }
