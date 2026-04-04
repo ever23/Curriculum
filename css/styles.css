@@ -327,12 +327,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .sidebar { width: 80px; padding: 2rem 1rem; align-items: center; }
-    .profile-section, .nav-link span { display: none; }
-    .main-content { margin-left: 80px; padding: 2rem; width: calc(100% - 80px); }
-}
-
-@media (max-width: 1024px) {
     body, html { 
         overflow-x: hidden !important; 
         width: 100% !important; 
@@ -352,23 +346,29 @@ body {
         border: none !important;
     }
     
-    h1, h2, #overview { padding: 0 1.25rem !important; }
+    section { padding: 4rem 0 !important; margin-bottom: 2rem !important; }
+    h1, h2, #overview { padding: 0 1.5rem !important; }
     
-    .summary-card { 
+    .summary-card, 
+    #experience > div, 
+    #contact > div { 
         width: 100% !important;
         margin: 0 !important;
-        padding: 1.5rem 1.25rem !important; 
+        padding: 2.5rem 1.5rem !important; 
         border-radius: 0 !important;
+        border-right: none !important;
         border-left: none !important;
     }
 
-    .projects-scroll-container,
-    .projects-container {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .projects-scroll-container {
         width: 100% !important;
-        overflow: visible !important;
         padding: 0 !important;
         margin: 0 !important;
-        display: block !important;
     }
 
     .projects-wrapper {
@@ -376,22 +376,21 @@ body {
         flex-direction: column !important;
         width: 100% !important;
         gap: 2rem !important;
-        margin: 0 !important;
         padding: 0 !important;
     }
 
     .project-card {
         flex: none !important;
-        width: 100vw !important;
-        min-width: 100vw !important;
-        margin: 0 0 2rem 0 !important; /* Margen inferior para separar */
-        padding: 0 !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        margin: 0 !important;
         border-radius: 0 !important;
         border: none !important;
         border-bottom: 1px solid var(--border-subtle) !important;
     }
 
-    .project-info { padding: 1.5rem 1.25rem !important; }
+    .project-info { padding: 2rem 1.5rem !important; }
+    .project-img { height: 180px !important; }
     
     .projects-nav { display: none !important; }
     
@@ -407,6 +406,7 @@ body {
         padding: 2rem 1.5rem !important;
     }
 
+    /* Disable some animations on mobile for performance */
     .reveal-on-scroll, section > div, .project-card, .stat-card {
         opacity: 1 !important;
         transform: none !important;
