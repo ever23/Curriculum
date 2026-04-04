@@ -4,121 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enyerber Franco // Ingeniero de Sistemas</title>
-    <meta name="description"
-        content="Portfolio profesional de Enyerber Franco - Ingeniero de Sistemas e Integrador de IA. Especialista en Node.js, Vue 3 y soluciones de alto impacto.">
+    <title>Enyerber Franco | Full-Stack Engineer & IA Architect</title>
 
-    <!-- Fonts -->
+    <!-- Pre-conexiones para rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=1.12">
 
-    <!-- Icons & JS Core -->
     <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <!-- Scripts -->
-    <script src="js/scripts.js" defer></script>
-    <script src="js/pdf-generator.js?v=13" defer></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 
 <body>
-
-    <!-- Dynamic Background Layers -->
-    <div id="matrix-bg"></div>
+    <!-- Efectos de Fondo -->
+    <canvas id="matrix-bg"></canvas>
     <div class="bg-glow"></div>
 
-    <!-- SIDEBAR NAVIGATION -->
+    <!-- Barra Lateral (Navigation) -->
     <aside class="sidebar">
         <div class="profile-section">
-            <div class="profile-name">Enyerber Franco</div>
-            <div class="profile-title">Ingeniero de Sistemas // Profesor Universitario</div>
+            <h1 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Enyerber Franco</h1>
+            <p style="color: var(--accent-primary); font-family: 'JetBrains Mono'; font-size: 0.75rem;">[ ENGINEER_V4.0 ]
+            </p>
         </div>
-        <nav style="margin-top: 3.5rem; flex-grow: 1;">
-            <a href="#overview" class="nav-link active">
-                <i data-lucide="LayoutDashboard" size="18"></i> <span>RESUMEN</span>
-            </a>
-            <a href="#projects" class="nav-link">
-                <i data-lucide="Terminal" size="18"></i> <span>PROYECTOS</span>
-            </a>
-            <a href="#experience" class="nav-link">
-                <i data-lucide="History" size="18"></i> <span>TRAYECTORIA</span>
-            </a>
-            <a href="#contact" class="nav-link">
-                <i data-lucide="MessageSquare" size="18"></i> <span>CONTACTO</span>
-            </a>
+
+        <nav style="margin-top: 3rem; flex-grow: 1;">
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                <li><a href="#overview" class="nav-link"><i data-lucide="Layout"></i><span>Overview</span></a></li>
+                <li><a href="#projects" class="nav-link"><i data-lucide="Code2"></i><span>Proyectos</span></a></li>
+                <li><a href="#experience" class="nav-link"><i data-lucide="Briefcase"></i><span>Trayectoria</span></a>
+                </li>
+                <li><a href="#contact" class="nav-link"><i data-lucide="Send"></i><span>Contacto</span></a></li>
+            </ul>
         </nav>
 
-        <div style="padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
-            <div style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center;">
-                <a href="https://github.com/ever23" target="_blank" style="color: var(--text-low); transition: 0.3s;"><i
-                        data-lucide="Github" size="24"></i></a>
-                <a href="https://www.linkedin.com/in/enyerber-franco-quintero-a54b48126" target="_blank"
-                    style="color: var(--text-low); transition: 0.3s;"><i data-lucide="Linkedin" size="24"></i></a>
-            </div>
-
-            <button id="downloadCV"
-                style="width: 100%; padding: 0.75rem; background: rgba(56, 189, 248, 0.1); border: 1px solid var(--accent-primary); border-radius: 8px; font-family: 'JetBrains Mono'; font-size: 0.7rem; cursor: pointer; transition: 0.3s; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; border: 1px solid var(--accent-primary); color: var(--accent-primary);">
-                <i data-lucide="Download" size="14"></i> EXPORTAR CV (ATS-PDF)
+        <div style="margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+            <button onclick="exportPDF()" class="nav-link"
+                style="background: transparent; border: none; width: 100%; cursor: pointer; color: var(--accent-primary);">
+                <i data-lucide="Download"></i><span>Exportar CV / PDF</span>
             </button>
-
-            <div style="font-family: 'JetBrains Mono'; font-size: 0.6rem; color: var(--text-low); text-align: center;">
-                EST. 2012 // ARCHITECT 3.0
-            </div>
         </div>
     </aside>
 
-    <!-- MAIN CONTENT AREA -->
+    <!-- Contenido Principal -->
     <main class="main-content">
-
-        <!-- HERO SEGMENT -->
-        <section id="overview" style="margin-bottom: 8rem;">
-            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem;">
+        <!-- 01 // OVERVIEW -->
+        <section id="overview" style="margin-bottom: 8rem; margin-top: 4rem;">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
                 <h2
-                    style="font-size: 0.85rem; font-family: 'JetBrains Mono'; color: var(--accent-primary); text-transform: uppercase;">
-                    01 // Resumen</h2>
+                    style="font-size: 0.75rem; font-family: 'JetBrains Mono'; letter-spacing: 0.3em; color: var(--accent-primary); margin: 0;">
+                    [ 01 // OVERVIEW ]</h2>
                 <div style="height: 1px; flex-grow: 1; background: var(--border-subtle);"></div>
             </div>
 
-            <div
-                style="background: var(--glass-bg); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 3.5rem; backdrop-filter: blur(15px);">
+            <div class="summary-card">
                 <h1
                     style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 2rem; letter-spacing: -2px;">
-                    Arquitectura de <span style="color: var(--accent-primary);">Infraestructura Crítica</span> &
-                    Liderazgo Académico
-                </h1>
-                <p
-                    style="font-size: 1.25rem; color: var(--text-mid); max-width: 850px; margin-bottom: 3.5rem; font-weight: 300; line-height: 1.8;">
-                    Ingeniero de Sistemas con **14 años de evolución constante** (2012 — 2026). Especialista en el
-                    diseño de arquitecturas escalables, creador del **CcMvc Framework** y articulador de soluciones
-                    avanzadas con IA. Como **Catedrático del PNFI en la UPPTMBI**, lidero la formación de nuevas
-                    generaciones de ingenieros, fusionando el rigor académico con la robustez del desarrollo industrial.
+                    Arquitecto de <span style="color: var(--accent-primary);">Sistemas</span> & Agentes de IA.</h1>
+                <p style="font-size: 1.25rem; color: var(--text-mid); max-width: 850px; margin-bottom: 3rem;">
+                    Ingeniero de Sistemas con más de <b>14 años de experiencia</b> en el desarrollo de software de alto
+                    nivel. Especializado en <b>Arquitecturas de Software</b> sólidas, integración de <b>IA
+                        Generativa</b> y optimización de bases de datos. Uniendo el rigor académico con soluciones
+                    industriales de alta fidelidad.
                 </p>
 
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <span class="stat-value">14+</span>
-                        <span class="stat-label">Años de Sistemas</span>
+                        <div class="stat-value">14+</div>
+                        <div class="stat-label">Años de Exp.</div>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value">200+</span>
-                        <span class="stat-label">Firma de Código</span>
+                        <div class="stat-value">PNFI</div>
+                        <div class="stat-label">Catedrático UPPTMBI</div>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value">TOP</span>
-                        <span class="stat-label">Evaluación Acad.</span>
+                        <div class="stat-value">IA</div>
+                        <div class="stat-label">Architect</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">DB</div>
+                        <div class="stat-label">Power User</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS SEGMENT -->
+        <!-- 02 // PROYECTOS -->
         <section id="projects" style="margin-bottom: 8rem;">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 4rem;">
                 <h2
@@ -128,42 +104,39 @@
             </div>
 
             <div class="projects-scroll-container">
-                <div class="projects-nav">
-                    <button class="nav-btn prev-btn"><i data-lucide="ChevronLeft" size="28"></i></button>
-                    <button class="nav-btn next-btn"><i data-lucide="ChevronRight" size="28"></i></button>
-                </div>
-
                 <div class="projects-wrapper" id="projects-slider">
-                    <!-- Project 1 -->
+                    <!-- Proyecto 1 -->
                     <div class="project-card">
                         <img src="images/antigravity_bridge.png" class="project-img" alt="Antigravity Bridge">
                         <div class="project-info">
                             <span
-                                style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">IA
-                                // Extensión VS Code</span>
+                                style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">Herramienta
+                                IA // VS Code Extension</span>
                             <h3 style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">Antigravity Bridge
                             </h3>
-                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Puente de
-                                orquestación IA diseñado para optimizar el flujo de trabajo en entornos de desarrollo
-                                industrial.</p>
+                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Extensión nativa de
+                                VS Code que transforma el móvil en una unidad de control externa. Implementa un puente
+                                Socket.io para ejecución remota de comandos, captura autónoma de logs y re-inyección de
+                                contexto en tiempo real para agentes de IA.</p>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- Proyecto 2 -->
                     <div class="project-card">
                         <img src="images/sql_suite_js.png" class="project-img" alt="SQL Suite JS">
                         <div class="project-info">
                             <span
-                                style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">Base
-                                de Datos // Middleware</span>
-                            <h3 style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">SQL Suite JS</h3>
-                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Abstracción de alta
-                                eficiencia para persistencia de datos complejos en ecosistemas JavaScript escalables.
-                            </p>
+                                style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">Infraestructura
+                                // JS ES6+ // NPM Package</span>
+                            <h3 style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">SQL Suite JS
+                                (tablamodel)</h3>
+                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Suite de
+                                persistencia políglota (NPM) que automatiza el mapeo entre modelos JS y sentencias SQL.
+                                Genera esquemas dinámicos para SQLite, MySQL y PostgreSQL, reduciendo el boilerplate en un 60%.</p>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
+                    <!-- Proyecto 3 -->
                     <div class="project-card">
                         <img src="images/ccmvc_logo.png" class="project-img" alt="CcMvc Framework"
                             style="object-fit: contain; padding: 2rem; background: rgba(0,0,0,0.3);">
@@ -172,33 +145,31 @@
                                 style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">Framework
                                 Full Stack // PHP</span>
                             <h3 style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">CcMvc Framework</h3>
-                            <p
-                                style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                                Framework industrial bajo patrón MVC con enrutamiento dinámico, inyección de
-                                dependencias y soporte nativo para Smarty y Twig.
-                            </p>
+                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Framework PHP de
+                                alto rendimiento (Proyecto de Grado). Núcleo MVC estricto con Inyección de Dependencias,
+                                enrutamiento dinámico y seguridad anti-XSS/SQLi.</p>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
+                    <!-- Proyecto 4 -->
                     <div class="project-card">
-                        <img src="images/star_trek_1.png" class="project-img" alt="Star Trek Game Engine"
-                            style="object-position: top;">
+                        <img src="images/star_trek_1.png" class="project-img" alt="Tactical Game Engine">
                         <div class="project-info">
                             <span
-                                style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">Sistemas
-                                Legados // C++</span>
+                                style="font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-primary); margin-bottom: 0.75rem; display: block;">Game
+                                Engine // C++ // Allegro</span>
                             <h3 style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">Star Trek Tactical
-                                Engine</h3>
-                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Simulador táctico
-                                espacial desarrollado en C++. Implementación de motores de renderizado 2D.</p>
+                            </h3>
+                            <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.6;">Shoot 'em up 2D
+                                creado desde cero en C++. Destaca el uso de programación de bajo nivel, game loops
+                                personalizados, gestión de memoria y renderizado avanzado.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE SEGMENT -->
+        <!-- 03 // TRAYECTORIA -->
         <section id="experience" style="margin-bottom: 8rem;">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 4rem;">
                 <h2
@@ -212,45 +183,34 @@
                 <div style="display: flex; flex-direction: column; gap: 4rem;">
                     <div style="position: relative; padding-left: 2rem; border-left: 2px solid var(--accent-primary);">
                         <span
-                            style="font-family: 'JetBrains Mono'; color: var(--accent-primary); font-size: 0.85rem; font-weight: 600;">2023
-                            — ACTUALIDAD</span>
+                            style="font-family: 'JetBrains Mono'; color: var(--accent-primary); font-size: 0.85rem; font-weight: 600;">MAYO
+                            2025 — ACTUALIDAD</span>
                         <h3 style="font-size: 1.6rem; margin: 0.5rem 0; font-weight: 700;">Catedrático de Ingeniería
                             PNFI</h3>
                         <p style="color: var(--text-mid); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">
                             UPPTMBI - Sede Trujillo</p>
                         <p style="color: var(--text-low); max-width: 800px; line-height: 1.7;">Responsable de las
-                            cátedras de Algorítmica, Redes y Desarrollo Web.</p>
+                            cátedras de Programación, Bases de Datos y Redes. Alineación del PNFI con las exigencias de
+                            la industria moderna.</p>
                     </div>
 
                     <div style="position: relative; padding-left: 2rem; border-left: 1px solid var(--border-subtle);">
                         <span
                             style="font-family: 'JetBrains Mono'; color: var(--accent-primary); font-size: 0.85rem; font-weight: 600;">2021
-                            — 2026</span>
+                            — ACTUALIDAD</span>
                         <h3 style="font-size: 1.6rem; margin: 0.5rem 0; font-weight: 700;">Arquitecto de Sistemas & IA
                         </h3>
                         <p style="color: var(--text-mid); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 500;">
-                            Soluciones Industriales Freelance</p>
+                            Consultoría Independiente</p>
                         <p style="color: var(--text-low); max-width: 800px; line-height: 1.7;">Diseño de
-                            infraestructuras digitales escalables y soluciones con LLMs.</p>
-                    </div>
-
-                    <div style="position: relative; padding-left: 2rem; border-left: 1px solid var(--border-subtle);">
-                        <span
-                            style="font-family: 'JetBrains Mono'; color: var(--accent-primary); font-size: 0.85rem; font-weight: 600;">2012
-                            — 2020</span>
-                        <h3 style="font-size: 1.6rem; margin: 0.5rem 0; font-weight: 700;">Evolución Industrial</h3>
-                        <div
-                            style="margin-top: 1.5rem; color: var(--text-low); font-size: 0.95rem; display: flex; flex-direction: column; gap: 1rem;">
-                            <p><strong>// 2019:</strong> Programador Back End @ Jida Desarrollos.</p>
-                            <p><strong>// 2017:</strong> UI Specialist (pfSense Project).</p>
-                            <p><strong>// 2016:</strong> Full Stack @ Org. Seguridad Industrial.</p>
-                        </div>
+                            infraestructuras escalables y agentes IA (Gemini API). Reducción comprobada del 70% en
+                            tiempos de digitalización.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SEGMENT -->
+        <!-- 04 // CONTACTO -->
         <section id="contact" style="margin-bottom: 8rem;">
             <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 4rem;">
                 <h2
@@ -259,40 +219,65 @@
                 <div style="height: 1px; flex-grow: 1; background: var(--border-subtle);"></div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                <div
-                    style="background: var(--glass-bg); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 3rem; text-align: center;">
-                    <i data-lucide="MessageCircle" size="48"
-                        style="color: var(--accent-primary); margin-bottom: 1.5rem;"></i>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700;">WhatsApp Directo</h3>
-                    <p style="color: var(--text-low); margin-bottom: 2rem;">¿Tienes un proyecto en mente? Envíame un
-                        mensaje.</p>
-                    <a href="https://wa.me/584266023263?text=Hola%20Enyerber,%20vi%20tu%20portfolio..." target="_blank"
-                        style="display: inline-block; background: var(--accent-primary); color: var(--bg-deep); padding: 1rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none;">
-                        CONTACTAR
-                    </a>
-                </div>
+            <div style="background: var(--glass-bg); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 3.5rem; backdrop-filter: blur(15px);">
+                <div class="contact-grid">
+                    <!-- Columna 1: WhatsApp Directo -->
+                    <div class="contact-card">
+                        <div style="width: 80px; height: 80px; background: rgba(56, 189, 248, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                            <i data-lucide="MessageCircle" size="32" style="color: var(--accent-primary);"></i>
+                        </div>
+                        <h3 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 800;">¿Hablamos?</h3>
+                        <p style="color: var(--text-mid); margin-bottom: 2.5rem; font-size: 1.1rem;">
+                            ¿Tienes un proyecto en mente? Envíame un mensaje directo por WhatsApp.
+                        </p>
+                        <a href="https://wa.me/584266023263" target="_blank"
+                            style="display: inline-block; padding: 1.2rem 2.5rem; background: var(--accent-primary); color: var(--bg-deep); text-decoration: none; border-radius: 50px; font-weight: 700; transition: all 0.3s ease;">
+                            WhatsApp Directo
+                        </a>
+                    </div>
 
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <a href="https://github.com/ever23" target="_blank"
-                        style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; text-decoration: none; color: var(--text-high);">
-                        <i data-lucide="Github" size="24" style="color: var(--accent-primary);"></i>
-                        <span>GitHub Oficial</span>
-                    </a>
-                    <a href="mailto:enyerverfranco@gmail.com"
-                        style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem; text-decoration: none; color: var(--text-high);">
-                        <i data-lucide="Mail" size="24" style="color: var(--accent-primary);"></i>
-                        <span>Correo Electrónico</span>
-                    </a>
+                    <!-- Columna 2: Redes Profesionales -->
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <a href="https://github.com/ever23" target="_blank" class="contact-link-card">
+                            <i data-lucide="Github" size="24" style="color: var(--accent-primary);"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
+                                    GITHUB</div>
+                                <div style="font-weight: 600;">@ever23</div>
+                            </div>
+                        </a>
+                        <a href="mailto:enyerberfranco@gmail.com" class="contact-link-card">
+                            <i data-lucide="Mail" size="24" style="color: var(--accent-primary);"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
+                                    EMAIL</div>
+                                <div style="font-weight: 600; font-size: 0.9rem;">enyerberfranco@gmail.com</div>
+                            </div>
+                        </a>
+                        <div class="contact-link-card">
+                            <i data-lucide="MapPin" size="24" style="color: var(--accent-primary);"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; color: var(--accent-primary); font-family: 'JetBrains Mono';">
+                                    UBICACIÓN</div>
+                                <div style="font-weight: 600;">Venezuela</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <footer
-            style="padding: 4rem 0; border-top: 1px solid var(--border-subtle); text-align: center; color: var(--text-low); font-family: 'JetBrains Mono'; font-size: 0.7rem;">
-            &copy; 2026 ENYERBER FRANCO // INGENIERO DE SISTEMAS Y PROFESOR UNIVERSITARIO
-        </footer>
     </main>
+
+    <!-- ACCIONES FLOTANTES (MÓVIL) -->
+    <button class="mobile-export-btn" id="mobile-pdf-btn" onclick="exportPDF()" aria-label="Descargar PDF">
+        <i data-lucide="ArrowDownToLine" size="28"></i>
+    </button>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
